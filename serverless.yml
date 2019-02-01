@@ -1,0 +1,11 @@
+service: studio-db-cron-job
+
+provider:
+  name: aws
+  runtime: nodejs10
+
+functions:
+  confirmOrder:
+    handler: handler.confirmOrder
+    events:
+      - schedule: rate(5 minute)
